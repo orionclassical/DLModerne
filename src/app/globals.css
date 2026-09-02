@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --light-background: #FFFDFB;
+  --brown-background: #FFF4E9;
+  --footer: #594835;
+  --paragraph: #222222;
+  --title: #1E3A27;
+  --button: #132E1D;
+  --button-text: #FFFFFF;
+}
+
+@theme inline {
+  --color-light: var(--light-background);
+  --color-brown: var(--brown-background);
+  --color-paragraph: var(--paragraph);
+  --color-title: var(--title);
+  --color-button: var(--button);
+  --color-button-text: var(--button-text);
+  --color-footer: var(--footer);
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-garamond);
+  --font-button: var(--font-montserrat);
+}
