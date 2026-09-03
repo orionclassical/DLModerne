@@ -4,7 +4,7 @@ export function SabutanIntro() {
     <section className="bg-brown">
       <div className="grid md:grid-cols-2 min-h-[420px]">
         {/* Left: text */}
-        <div className="flex flex-col justify-center px-8 md:px-16 py-16">
+        <div className="flex flex-col justify-center px-8 ml-auto md:px-16 py-16">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-title leading-snug mb-6">
             Handwoven from Sabutan.
             <br />
