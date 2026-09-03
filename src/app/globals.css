@@ -22,3 +22,7 @@
   --font-body: var(--font-garamond);
   --font-button: var(--font-montserrat);
 }
+
+html{
+  scroll-behavior: smooth;
+}

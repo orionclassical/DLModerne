@@ -34,7 +34,7 @@ const materials = [
 
 export function MaterialsList() {
   return (
-    <section className="bg-light py-20">
+    <section id="materials" className="scroll-mt-15 bg-light py-20">
       <div className="text-center mb-14 px-6">
         <h2 className="font-display font-bold text-3xl text-title mb-4">
           Our Materials — Natural.
@@ -47,7 +47,7 @@ export function MaterialsList() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-4xl flex flex-col gap-1">
+      <div className="mx-auto max-w-4xl flex flex-col gap-10">
         {materials.map((material) => (
           <MaterialRow key={material.name} {...material} />
         ))}

@@ -62,5 +62,23 @@ Pages expected to be in DLModerne
 
 ***Color Pallet***
 
-***Font Styles***
+Text
 
+- #222222 //paragraph
+- #1E3A27 //For Important Text such as title 
+
+Button
+
+- #132E1D //Background Color
+- #FFFFFF //Button Text Color
+
+Main Colors
+
+- #FFFDFB
+- #FFF4E9
+
+
+***Font Styles***
+Playfair Display SC - Titles
+EB Garamond - Subtext
+Montserrat - Buttons

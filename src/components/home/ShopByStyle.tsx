@@ -24,7 +24,7 @@ export function ShopByStyle() {
   };
 
   return (
-    <section className="bg-light py-20">
+    <section id="shop-by-style" className="scroll-mt-22 bg-light py-20">
       <div className="mx-auto max-w-6xl px-6 text-center mb-12">
         <h2 className="font-display font-bold text-3xl text-title mb-4">
           Shop By Different Styles

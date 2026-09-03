@@ -1,7 +1,7 @@
 // src/components/home/Hero.tsx
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-hero-mint to-cream overflow-hidden">
+    <section id="hero" className="scroll-mt-50 relative bg-gradient-to-br from-hero-mint to-cream overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Left: text content */}
         <div>
@@ -17,7 +17,7 @@ export function Hero() {
             contemporary design. Made from natural materials such as
             sabutan, pandan, and banig — with love from the Philippines.
           </p>
-          <button className="font-button text-sm bg-button text-button-text px-6 py-3 rounded-sm hover:opacity-90 transition-opacity">
+          <button className="font-button text-sm bg-button font-medium text-button-text cursor-pointer px-6 py-3 rounded-sm hover:opacity-90 transition-opacity">
             DISCOVER MORE
           </button>
         </div>

@@ -14,8 +14,8 @@ export function FeatureHighlights() {
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {features.map(({ icon: Icon, label }) => (
           <div key={label} className="flex flex-col items-center text-center gap-3">
-            <Icon className="w-6 h-6 text-title" strokeWidth={1.5} />
-            <p className="font-body text-sm text-paragraph max-w-[160px]">{label}</p>
+            <Icon className="w-6 h-6 font-bold text-title" strokeWidth={1.5} />
+            <p className="font-body text-title text-sm max-w-[160px]">{label}</p>
           </div>
         ))}
       </div>

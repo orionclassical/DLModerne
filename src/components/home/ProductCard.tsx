@@ -12,9 +12,11 @@ export function ProductCard({ name, imagePath }: ProductCardProps) {
           Insert: {imagePath}
         </p>
       </div>
-      <button className="font-button text-xs bg-button text-button-text px-5 py-2 rounded-sm self-start hover:opacity-90 transition-opacity">
-        View
-      </button>
+      <div>
+        <button className="font-button text-xs bg-button cursor-pointer text-button-text px-5 py-2 rounded-sm self-start hover:opacity-90 transition-opacity">
+          View
+        </button>
+      </div>
     </div>
   );
 }

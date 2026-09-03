@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <FeatureHighlights />
-      <ShopByStyle />
-      <SabutanIntro />
-      <MaterialsList />
-      <ContactSection />
+      <main className="pt-[72px]">
+        <Hero />
+        <FeatureHighlights />
+        <ShopByStyle />
+        <ContactSection />
+        <SabutanIntro />
+        <MaterialsList />
+      </main>
       <Footer />
     </>
   );

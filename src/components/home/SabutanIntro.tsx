@@ -15,7 +15,7 @@ export function SabutanIntro() {
             with modern design. Lightweight, durable, and stylish — for
             every day and every occasion.
           </p>
-          <button className="font-button text-xs bg-button text-button-text px-6 py-3 rounded-sm w-fit hover:opacity-90 transition-opacity">
+          <button className="font-button text-xs cursor-pointer bg-button text-button-text px-6 py-3 rounded-sm w-fit hover:opacity-90 transition-opacity">
             CHECK IT OUT
           </button>
         </div>
