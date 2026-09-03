@@ -1,4 +1,6 @@
 // src/components/materials/MaterialRow.tsx
+import Image from "next/image";
+
 type MaterialRowProps = {
   name: string;
   description: string;
@@ -22,10 +24,14 @@ export function MaterialRow({
   );
 
   const imageBlock = (
-    <div className="relative min-h-[220px] border-2 border-dashed border-title/30 flex items-center justify-center bg-white/50">
-      <p className="font-body text-xs text-title/50 text-center px-4">
-        Insert: {imagePath}
-      </p>
+    <div className="relative min-h-[220px] w-full overflow-hidden">
+      <Image
+        src={imagePath}
+        alt={name}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
     </div>
   );
 

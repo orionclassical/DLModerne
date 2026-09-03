@@ -1,33 +1,34 @@
 // src/components/materials/MaterialsList.tsx
 import { MaterialRow } from "./MaterialRow";
 
+
 const materials = [
   {
     name: "Pandan",
     description:
       "Pandan is a natural leaf with a beautiful texture and flexibility. It is dried and dyed to create durable and stylish weave patterns.",
-    imagePath: "/images/materials/pandan.jpg",
+    imagePath: "/img/materials-pandanleaves.png",
     imagePosition: "right" as const,
   },
   {
     name: "Sabutan",
     description:
-      "Sabutan is a fiber from the banana plant. Handcrafted to create a robust, lightweight, and sustainable structure.",
-    imagePath: "/images/materials/sabutan.jpg",
+      "Sabutan is a fine variety of Pandan known for its strength and smooth texture. Handcrafted to create a robust, lightweight, and sustainable structure.",
+    imagePath: "/img/materials-sabutan.png",
     imagePosition: "left" as const,
   },
   {
     name: "Rattan",
     description:
       "Rattan is known for its strength and flexibility. It gives our bags shape, stability, and a natural look.",
-    imagePath: "/images/materials/rattan.jpg",
+    imagePath: "/img/materials-rattan.png",
     imagePosition: "right" as const,
   },
   {
     name: "Buntal",
     description:
       "Buntal is a fine, natural fiber with a gentle sheen. It provides elegant details and a particularly refined finish.",
-    imagePath: "/images/materials/buntal.jpg",
+    imagePath: "/img/materials-buntal.png",
     imagePosition: "left" as const,
   },
 ];
