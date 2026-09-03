@@ -8,7 +8,7 @@ import { Globe } from "lucide-react";
 
 const navLinks = [
   { label: "HOME", href: "#hero" },
-  { label: "COLLECTION", href: "#shop-by-style" },
+  { label: "COLLECTION", href: "#collection" },
   { label: "CONTACT", href: "#contact" },
   { label: "MATERIALS", href: "#materials" },
 ];

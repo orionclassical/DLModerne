@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   title: "DL Moderne | Bayong Bag Collection",
   description:
     "Modern Bayong bags combining Filipino craftsmanship with contemporary design. Made from sabutan, pandan, and banig.",
+  icons: {
+    icon: [{ url: "/img/logo.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/img/logo.jpg", type: "image/jpeg" }],
+  },
 };
 
 export default function RootLayout({

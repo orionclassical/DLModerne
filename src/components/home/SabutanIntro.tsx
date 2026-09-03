@@ -21,9 +21,9 @@ export function SabutanIntro() {
         </div>
 
         {/* Right: image placeholder */}
-        <div className="relative min-h-[320px] md:min-h-full border-2 border-dashed border-title/30 flex items-center justify-center bg-peach/40">
-          <p className="font-body text-xs text-title/50 text-center px-4">
-            Insert: /public/images/materials/sabutan-hero.jpg
+        <div className="relative min-h-[320px] md:min-h-full flex items-center justify-center bg-peach/40">
+          <p className="font-body text-xs text-title/50">
+            <img src="img/promotebag(1).png" alt=""/>
           </p>
         </div>
       </div>
