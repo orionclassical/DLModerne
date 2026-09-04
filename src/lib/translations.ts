@@ -18,7 +18,7 @@ export const translations = {
     shop: {
       heading: "Shop By Different Styles",
       description:
-        "Our modern Bayong bags combine Filipino craftsmanship with contemporary design. Made from natural materials such as sabutan, pandan, and banig — with love from the Philippines.",
+        "Explore our collection of modern Bayong bags, available in a wide variety of styles that blend traditional Filipino craftsmanship with contemporary design.",
       view: "VIEW",
     },
     materialsSection: {
@@ -82,7 +82,7 @@ export const translations = {
     shop: {
       heading: "Nach Stilen einkaufen",
       description:
-        "Unsere modernen Bayong-Taschen vereinen philippinische Handwerkskunst mit zeitgemäßem Design. Hergestellt aus natürlichen Materialien wie Sabutan, Pandan und Banig — mit Liebe von den Philippinen.",
+        "Entdecken Sie unsere vielfältige Kollektion moderner Bayong-Taschen, die traditionelle philippinische Handwerkskunst mit zeitgemäßem Design verbindet",
       view: "ANSEHEN",
     },
     materialsSection: {
