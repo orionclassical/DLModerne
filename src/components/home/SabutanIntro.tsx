@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function SabutanIntro() {
@@ -7,8 +8,8 @@ export function SabutanIntro() {
 
   return (
     <section className="bg-brown">
-      <div className="grid md:grid-cols-2 min-h-[420px]">
-        <div className="flex flex-col justify-center px-8 ml-auto md:px-16 py-16">
+      <div className="grid md:grid-cols-2 md:h-150">
+        <div className="flex flex-col justify-center items-center md:items-start px-6 sm:px-8 md:px-16 py-12 md:py-16 text-center md:text-left md:ml-auto">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-title leading-snug mb-6">
             {t.sabutanIntro.heading1}
             <br />
@@ -22,10 +23,13 @@ export function SabutanIntro() {
           </button>
         </div>
 
-        <div className="relative min-h-[320px] md:min-h-full flex items-center justify-center bg-peach/40">
-          <p className="font-body text-xs text-title/50">
-            <img src="img/promotebag(1).png" alt="" />
-          </p>
+        <div className="relative h-72 sm:h-96 md:h-full bg-peach/40">
+          <Image
+            src="/img/promotebag(1).png"
+            alt="Sabutan bayong bag"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

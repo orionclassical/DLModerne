@@ -81,14 +81,14 @@ export function ShopByStyle() {
         <button
           onClick={() => scroll("left")}
           aria-label="Scroll left"
-          className="absolute cursor-pointer -left-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title flex items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
+          className="hidden xl:flex cursor-pointer absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
         >
           <ChevronLeft className="w-4 h-4 text-title" />
         </button>
 
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth px-12 py-2 [scrollbar-width:none]"
+          className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth px-6 md:px-12 py-2 [scrollbar-width:none]"
         >
           {products.map((product, index) => (
             <ProductCard
@@ -103,7 +103,7 @@ export function ShopByStyle() {
         <button
           onClick={() => scroll("right")}
           aria-label="Scroll right"
-          className="absolute cursor-pointer -right-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title flex items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
+          className="hidden xl:flex cursor-pointer absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
         >
           <ChevronRight className="w-4 h-4 text-title" />
         </button>

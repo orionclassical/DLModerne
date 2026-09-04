@@ -1,3 +1,4 @@
+// src/components/home/ProductModal.tsx
 "use client";
 
 import Image from "next/image";
@@ -49,7 +50,7 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 "
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-2 sm:px-4"
     >
       <button
         onClick={(e) => {
@@ -57,35 +58,35 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
           onPrevious();
         }}
         aria-label={t.modal.previous}
-        className="absolute ml-20 md:left-10 top-1/2 -translate-y-1/2 z-10 w-25 h-25 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
+        className="md:left-10 lg:left-40 z-10 w-14 h-14 sm:w-14 sm:h-14 md:w-14 md:h-14 lg:w-18 lg:h-18 rounded-full bg-light flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
       >
-        <ChevronLeft className="w-5 h-5 text-title" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-title" />
       </button>
 
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-light rounded-2xl p-10 max-w-5xl w-full h-9/12 grid md:grid-cols-2 overflow-hidden shadow-xl"
+        className="relative bg-light rounded-2xl p-4 sm:p-5 md:p-10 max-w-5xl w-full max-h-[85vh] overflow-y-auto md:h-9/12 grid md:grid-cols-2 gap-4 md:gap-0 shadow-xl mx-3"
       >
         <button
           onClick={onClose}
           aria-label={t.modal.close}
-          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
+          className="absolute top-1 right-1 md:top-4 md:right-4 z-10 w-8 h-8 rounded-full bg-light flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
         >
           <X className="w-4 h-4 text-title" />
         </button>
 
-        <div className="relative h-64 md:h-full bg-brown rounded-2xl">
+        <div className="relative h-56 sm:h-56 md:h-full lg:h-full bg-brown rounded-2xl">
           <Image
             src={product.imagePath}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-scale-down"
           />
         </div>
 
-        <div className="p-8 flex flex-col justify-center">
+        <div className="p-2 md:p-8 flex flex-col justify-center">
           <p className="font-body text-xs text-paragraph/60 mb-1">{product.code}</p>
-          <h3 className="font-display font-bold text-2xl text-title mb-4">
+          <h3 className="font-display font-bold text-xl md:text-2xl text-title mb-4">
             {product.name}
           </h3>
 
@@ -104,7 +105,7 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
             </p>
           </div>
 
-          <p className="font-display font-bold text-2xl text-title mb-6">
+          <p className="font-display font-bold text-xl md:text-2xl text-title mb-6">
             {product.price}
           </p>
 
@@ -124,9 +125,9 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
           onNext();
         }}
         aria-label={t.modal.next}
-        className="absolute md:right-10 top-1/2 -translate-y-1/2 z-10 w-25 h-25 mr-20 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
+        className="sm:right-4 md:right-10 lg:right-40 z-10 w-14 h-14 sm:w-14 sm:h-14 md:w-14 md:h-14 lg:w-18 lg:h-18 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
       >
-        <ChevronRight className="w-5 h-5 text-title" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-title" />
       </button>
     </div>
   );
