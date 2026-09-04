@@ -19,9 +19,12 @@ export function Hero() {
             contemporary design. Made from natural materials such as
             sabutan, pandan, and banig — with love from the Philippines.
           </p>
-          <button className="font-button text-sm bg-button font-medium text-button-text cursor-pointer px-6 py-3 rounded-sm hover:opacity-90 transition-opacity">
+          <a
+            href="#collection"
+            className="inline-block font-button text-sm bg-button font-medium text-button-text cursor-pointer px-6 py-3 rounded-sm hover:opacity-90 transition-opacity"
+          >
             DISCOVER MORE
-          </button>
+          </a>
         </div>
 
         {/* Right: hero image */}
