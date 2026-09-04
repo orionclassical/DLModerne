@@ -1,5 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { Playfair_Display_SC, EB_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -39,7 +40,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${garamond.variable} ${montserrat.variable} h-full`}
     >
       <body className="h-full antialiased font-body text-paragraph bg-cream" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

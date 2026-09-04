@@ -1,9 +1,9 @@
-// src/components/home/ProductModal.tsx
 "use client";
 
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Product = {
   id: string;
@@ -25,8 +25,8 @@ type ProductModalProps = {
 
 export function ProductModal({ product, onClose, onNext, onPrevious }: ProductModalProps) {
   const [isVisible, setIsVisible] = useState(true);
+  const { t } = useLanguage();
 
-  // Fade out briefly, swap content, fade back in — on every product change
   useEffect(() => {
     if (!product) return;
     setIsVisible(false);
@@ -51,25 +51,24 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
       onClick={onClose}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 "
     >
-      {/* Previous arrow — outside the card */}
       <button
         onClick={(e) => {
           e.stopPropagation();
           onPrevious();
         }}
-        aria-label="Previous product"
+        aria-label={t.modal.previous}
         className="absolute ml-20 md:left-10 top-1/2 -translate-y-1/2 z-10 w-25 h-25 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
       >
         <ChevronLeft className="w-5 h-5 text-title" />
       </button>
-      
+
       <div
         onClick={(e) => e.stopPropagation()}
         className="relative bg-light rounded-2xl p-10 max-w-5xl w-full h-9/12 grid md:grid-cols-2 overflow-hidden shadow-xl"
       >
         <button
           onClick={onClose}
-          aria-label="Close"
+          aria-label={t.modal.close}
           className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
         >
           <X className="w-4 h-4 text-title" />
@@ -92,15 +91,15 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
 
           <div className="flex flex-col gap-2 mb-6">
             <p className="font-body text-sm text-paragraph">
-              <span className="font-button text-xs text-title">SIZE: </span>
+              <span className="font-button text-xs text-title">{t.modal.size} </span>
               {product.size}
             </p>
             <p className="font-body text-sm text-paragraph">
-              <span className="font-button text-xs text-title">MATERIAL: </span>
+              <span className="font-button text-xs text-title">{t.modal.material} </span>
               {product.material}
             </p>
             <p className="font-body text-sm text-paragraph">
-              <span className="font-button text-xs text-title">COLOR: </span>
+              <span className="font-button text-xs text-title">{t.modal.color} </span>
               {product.color}
             </p>
           </div>
@@ -114,18 +113,17 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
             onClick={onClose}
             className="inline-block text-center font-button text-sm bg-button text-button-text px-6 py-3 rounded-sm hover:opacity-90 transition-opacity"
           >
-            INQUIRE ABOUT THIS BAG
+            {t.modal.inquire}
           </a>
         </div>
       </div>
 
-      {/* Next arrow — outside the card */}
       <button
         onClick={(e) => {
           e.stopPropagation();
           onNext();
         }}
-        aria-label="Next product"
+        aria-label={t.modal.next}
         className="absolute md:right-10 top-1/2 -translate-y-1/2 z-10 w-25 h-25 mr-20 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors cursor-pointer"
       >
         <ChevronRight className="w-5 h-5 text-title" />

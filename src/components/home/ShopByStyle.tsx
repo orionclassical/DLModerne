@@ -1,10 +1,10 @@
-// src/components/home/ShopByStyle.tsx
 "use client";
 
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ProductCard } from "./ProductCard";
 import { ProductModal } from "./ProductModal";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Product = {
   id: string;
@@ -45,6 +45,7 @@ const products: Product[] = [
 export function ShopByStyle() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const scroll = (direction: "left" | "right") => {
     scrollRef.current?.scrollBy({
@@ -69,12 +70,10 @@ export function ShopByStyle() {
     <section id="collection" className="scroll-mt-22 bg-light py-20">
       <div className="mx-auto max-w-6xl px-6 text-center mb-12">
         <h2 className="font-display font-bold text-3xl text-title mb-4">
-          Shop By Different Styles
+          {t.shop.heading}
         </h2>
         <p className="font-body text-sm text-paragraph max-w-xl mx-auto leading-relaxed">
-          Our modern Bayong bags combine Filipino craftsmanship with
-          contemporary design. Made from natural materials such as sabutan,
-          pandan, and banig — with love from the Philippines.
+          {t.shop.description}
         </p>
       </div>
 
@@ -95,6 +94,7 @@ export function ShopByStyle() {
             <ProductCard
               key={product.id}
               {...product}
+              viewLabel={t.shop.view}
               onView={() => setSelectedIndex(index)}
             />
           ))}

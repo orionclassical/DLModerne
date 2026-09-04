@@ -1,26 +1,26 @@
-// src/components/layout/Header.tsx
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Globe } from "lucide-react";
-
-const navLinks = [
-  { label: "HOME", href: "#hero" },
-  { label: "COLLECTION", href: "#collection" },
-  { label: "CONTACT", href: "#contact" },
-  { label: "MATERIALS", href: "#materials" },
-];
-
-const languages = [
-  { code: "en", label: "English" },
-  { code: "de", label: "Deutsch" },
-];
+import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Header() {
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("en");
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.home, href: "#hero" },
+    { label: t.nav.collection, href: "#collection" },
+    { label: t.nav.contact, href: "#contact" },
+    { label: t.nav.materials, href: "#materials" },
+  ];
+
+  const languages = [
+    { code: "en" as const, label: "English" },
+    { code: "de" as const, label: "Deutsch" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-light border-b border-black/5">
@@ -70,12 +70,11 @@ export function Header() {
               <button
                 key={lang.code}
                 onClick={() => {
-                  setSelectedLang(lang.code);
+                  setLanguage(lang.code);
                   setIsLangOpen(false);
-                  // TODO: wire this into actual i18n logic (e.g. next-intl)
                 }}
                 className={`w-full cursor-pointer text-left px-4 py-2 font-body text-xs hover:bg-brown-background transition-colors ${
-                  selectedLang === lang.code ? "text-title font-bold" : "text-paragraph"
+                  language === lang.code ? "text-title font-bold" : "text-paragraph"
                 }`}
               >
                 {lang.label}

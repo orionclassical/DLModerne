@@ -1,14 +1,18 @@
-// src/components/home/FeatureHighlights.tsx
-import { Leaf, HandHeart, Palmtree, Star } from "lucide-react";
+"use client";
 
-const features = [
-  { icon: Leaf, label: "Natural materials from nature" },
-  { icon: HandHeart, label: "Carefully crafted by experienced artisans" },
-  { icon: Palmtree, label: "Authentic craftsmanship with cultural heritage" },
-  { icon: Star, label: "Unique pieces for everyday life and special occasions" },
-];
+import { Leaf, HandHeart, Palmtree, Star } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function FeatureHighlights() {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: Leaf, label: t.features.natural },
+    { icon: HandHeart, label: t.features.crafted },
+    { icon: Palmtree, label: t.features.authentic },
+    { icon: Star, label: t.features.unique },
+  ];
+
   return (
     <section className="bg-brown py-14">
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
