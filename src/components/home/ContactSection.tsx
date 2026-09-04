@@ -15,7 +15,7 @@ export function ContactSection() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-16">
+      <div className="flex flex-col md:flex-row align-middle justify-center gap-12 ">
         <a className="flex flex-col items-center gap-2 group">
           <MessageCircle className="w-7 h-7 text-[#25D366]" strokeWidth={1.5} />
           <p className="font-button text-title">{t.contact.whatsapp}</p>
