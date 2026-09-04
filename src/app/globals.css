@@ -8,6 +8,8 @@
   --title: #1E3A27;
   --button: #132E1D;
   --button-text: #FFFFFF;
+  --button-scroll: #F0D7BE; 
+  --button-arrow: #594835;
 }
 
 @theme inline {
@@ -17,6 +19,8 @@
   --color-title: var(--title);
   --color-button: var(--button);
   --color-button-text: var(--button-text);
+  --color-scroll: var(--button-scroll);
+  --color-arrow: var(--button-arrow);
   --color-footer: var(--footer);
   --font-display: var(--font-playfair);
   --font-body: var(--font-garamond);

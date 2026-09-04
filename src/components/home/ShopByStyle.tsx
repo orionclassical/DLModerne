@@ -69,7 +69,7 @@ export function ShopByStyle() {
         <button
           onClick={() => scroll("left")}
           aria-label="Scroll left"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-title/20 flex items-center justify-center shadow-sm hover:bg-peach transition-colors"
+          className="absolute cursor-pointer -left-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light border border-title flex items-center justify-center shadow-sm hover:bg-peach transition-colors"
         >
           <ChevronLeft className="w-4 h-4 text-title" />
         </button>
@@ -86,7 +86,7 @@ export function ShopByStyle() {
         <button
           onClick={() => scroll("right")}
           aria-label="Scroll right"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-title/20 flex items-center justify-center shadow-sm hover:bg-peach transition-colors"
+          className="absolute cursor-pointer -right-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light border border-title flex items-center justify-center shadow-sm hover:bg-peach transition-colors"
         >
           <ChevronRight className="w-4 h-4 text-title" />
         </button>

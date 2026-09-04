@@ -3,7 +3,7 @@ import { MessageCircle, Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-50 bg-light pt-20 pb-40">
+    <section id="contact" className="scroll-mt-65 bg-light pb-40">
       <div className="text-center mb-12 px-6">
         <h2 className="font-display font-bold text-3xl text-title mb-4">Interested in these bags? Contact Us</h2>
         <p className="font-body text-sm text-paragraph">
