@@ -69,7 +69,7 @@ export function ShopByStyle() {
   return (
     <section id="collection" className="scroll-mt-22 bg-light py-20">
       <div className="mx-auto max-w-6xl px-6 text-center mb-12">
-        <h2 className="font-display font-bold text-3xl text-title mb-4">
+        <h2 className="font-display font-bold text-2xl sm:text-3xl text-title mb-4">
           {t.shop.heading}
         </h2>
         <p className="font-body text-sm text-paragraph max-w-xl mx-auto leading-relaxed">

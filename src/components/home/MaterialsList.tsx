@@ -37,7 +37,7 @@ export function MaterialsList() {
   return (
     <section id="materials" className="scroll-mt-15 px-15 bg-light py-20">
       <div className="text-center mb-14 px-6">
-        <h2 className="font-display font-bold text-3xl text-title mb-4">
+        <h2 className="font-display font-bold text-2xl sm:text-3xl text-title mb-4">
           {t.materialsSection.heading1}
           <br />
           {t.materialsSection.heading2}

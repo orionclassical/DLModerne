@@ -10,7 +10,7 @@ export function SabutanIntro() {
     <section className="bg-brown">
       <div className="grid md:grid-cols-2 md:h-150">
         <div className="flex flex-col justify-center items-center md:items-start px-6 sm:px-8 md:px-16 py-12 md:py-16 text-center md:text-left md:ml-auto">
-          <h1 className="font-display font-bold text-3xl md:text-4xl text-title leading-snug mb-6">
+          <h1 className="font-display font-bold text-2xl md:text-4xl text-title leading-snug mb-6">
             {t.sabutanIntro.heading1}
             <br />
             {t.sabutanIntro.heading2}

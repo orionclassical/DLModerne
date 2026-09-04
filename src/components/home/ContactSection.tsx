@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-65 bg-light pb-40">
       <div className="text-center mb-12 px-6">
-        <h2 className="font-display font-bold text-3xl text-title mb-4">{t.contact.heading}</h2>
+        <h2 className="font-display font-bold text-2xl sm:text-3xl text-title mb-4">{t.contact.heading}</h2>
         <p className="font-body text-sm text-paragraph">
           {t.contact.description}
         </p>
