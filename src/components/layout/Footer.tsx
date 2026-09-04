@@ -72,8 +72,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-button-text/15">
-        <p className="font-body text-xs text-button-text/60 text-center py-5">
+      <div>
+        <p className="font-body text-xs text-button-text/60 text-center pb-5">
           © {new Date().getFullYear()} DL Moderne. All rights reserved.
         </p>
       </div>
