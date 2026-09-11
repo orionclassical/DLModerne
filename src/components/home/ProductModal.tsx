@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 type Product = {
-  id: string;
   name: string;
   code: string;
   size: string;
@@ -33,7 +32,7 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
     setIsVisible(false);
     const timeout = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timeout);
-  }, [product?.id]);
+  }, [product?.name]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -85,7 +84,7 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
         </div>
 
         <div className="p-2 md:p-8 flex flex-col justify-center">
-          <p className="font-body text-xs text-paragraph/60 mb-1">{product.code}</p>
+          {/* <p className="font-body text-xs text-paragraph/60 mb-1">{product.code}</p> */}
           <h3 className="font-display font-bold text-xl md:text-2xl text-title mb-4">
             {product.name}
           </h3>

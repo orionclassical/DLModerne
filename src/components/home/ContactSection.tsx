@@ -28,7 +28,7 @@ export function ContactSection() {
           <Mail className="w-7 h-7 text-title" strokeWidth={1.5} />
           <p className="font-button text-title">{t.contact.email}</p>
           <p className="font-body text-paragraph group-hover:text-title transition-colors">
-            lourafer.manungas@gmx.de
+            dl-moderne-bayong@gmx.de
           </p>
         </a>
       </div>
