@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    nav: { home: "HOME", collection: "COLLECTION", contact: "CONTACT", materials: "MATERIALS" },
+    nav: { home: "HOME", collection: "COLLECTION", contact: "CONTACT", materials: "MATERIALS", aboutme: "ABOUT ME" },
     hero: {
       eyebrow: "DL Modern Bayong Bag Collection",
       titleLine1: "Tradition Meets",
@@ -64,7 +64,7 @@ export const translations = {
     },
   },
   de: {
-    nav: { home: "STARTSEITE", collection: "KOLLEKTION", contact: "KONTAKT", materials: "MATERIALIEN" },
+    nav: { home: "STARTSEITE", collection: "KOLLEKTION", contact: "KONTAKT", materials: "MATERIALIEN", aboutme: "ÜBER UNS" },
     hero: {
       eyebrow: "DL Modern Bayong Taschenkollektion",
       titleLine1: "Tradition trifft",

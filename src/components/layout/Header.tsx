@@ -13,10 +13,11 @@ export function Header() {
   const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: t.nav.home, href: "#hero" },
-    { label: t.nav.collection, href: "#collection" },
-    { label: t.nav.contact, href: "#contact" },
-    { label: t.nav.materials, href: "#materials" },
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.collection, href: "/#collection" },
+    { label: t.nav.contact, href: "/#contact" },
+    { label: t.nav.materials, href: "/#materials" },
+    { label: t.nav.aboutme, href: "/about" },
   ];
 
   const languages = [
@@ -27,7 +28,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-light border-b border-black/5">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
-        <Link href="#hero" className="flex items-center gap-2 cursor-auto">
+        <Link href="/" className="flex items-center gap-2 cursor-auto">
           <div className="w-10 h-10 rounded-full border border-brown overflow-hidden">
             <Image
               src="/img/logo.jpg"
