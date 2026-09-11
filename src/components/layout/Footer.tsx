@@ -62,7 +62,7 @@ export function Footer() {
           </a>
           <a className="flex items-center gap-2 justify-center lg:justify-start font-body text-sm text-button-text/80 hover:text-button-text transition-colors w-fill">
             <Mail className="w-4 h-4" strokeWidth={1.5} />
-            lourafer.manungas@gmx.de
+            dl-moderne-bayong@gmx.de
           </a>
         </div>
       </div>
