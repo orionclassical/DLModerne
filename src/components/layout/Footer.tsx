@@ -58,7 +58,7 @@ export function Footer() {
           </p>
           <a className="flex items-center gap-2 justify-center lg:justify-start font-body text-sm text-button-text/80 hover:text-button-text transition-colors w-fill">
             <MessageCircle className="w-4 h-4" strokeWidth={1.5} />
-            +49 176 32763467
+            +49 155 10305340
           </a>
           <a className="flex items-center gap-2 justify-center lg:justify-start font-body text-sm text-button-text/80 hover:text-button-text transition-colors w-fill">
             <Mail className="w-4 h-4" strokeWidth={1.5} />

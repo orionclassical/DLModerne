@@ -17,7 +17,7 @@ export function Header() {
     { label: t.nav.collection, href: "/#collection" },
     { label: t.nav.contact, href: "/#contact" },
     { label: t.nav.materials, href: "/#materials" },
-    // { label: t.nav.aboutme, href: "/about" },
+    { label: t.nav.aboutme, href: "/about" },
   ];
 
   const languages = [
