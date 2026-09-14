@@ -80,7 +80,7 @@ export function AboutMePage() {
 
         <div className="grid gap-6">
           {storyHighlights.map(({description_1, description_2, description_3 }) => (
-            <article
+            <div
             //   key={title}
               className="rounded-[1.5rem] mx-55"
             >
@@ -101,7 +101,7 @@ export function AboutMePage() {
                 <br />
                 {description_3}
               </p>
-            </article>
+            </div>
           ))}
         </div>
       </section>
