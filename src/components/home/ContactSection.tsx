@@ -20,7 +20,7 @@ export function ContactSection() {
           <MessageCircle className="w-7 h-7 text-[#25D366]" strokeWidth={1.5} />
           <p className="font-button text-title">{t.contact.whatsapp}</p>
           <p className="font-body text-paragraph group-hover:text-title transition-colors">
-            +4917632763467
+            +49 155 10305340
           </p>
         </a>
 

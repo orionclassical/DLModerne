@@ -28,7 +28,7 @@ const stats = [
 export function AboutMePage() {
   return (
     <div id="aboutme" className="bg-light text-paragraph">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#FFFDFB] via-[#FFF4E9] to-[#D8E8D2]">
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#F1FFE8] from-35% to-[#AAD3AB] to-100%">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-20">
           <div className="grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr]">
             <div className="relative z-10">
@@ -55,10 +55,10 @@ export function AboutMePage() {
 
             <div className="relative flex items-center justify-center">
               <div className="absolute inset-x-8 bottom-4 h-16 rounded-full bg-[#1E3A27]/10 blur-2xl" />
-              <div className="relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-title/10 bg-white/60 p-3 shadow-[0_25px_60px_rgba(30,58,39,0.12)] backdrop-blur-sm">
-                <div className="relative h-[420px] overflow-hidden rounded-[1.5rem]">
+              <div className="relative w-full max-w-xl overflow-hidden rounded-[50rem] border border-title/10 bg-white/60 p-3 shadow-[0_25px_60px_rgba(30,58,39,0.12)] backdrop-blur-sm">
+                <div className="relative h-[455px] overflow-hidden rounded-[50rem]">
                   <Image
-                    src="/img/OriginalBayongBags.png"
+                    src="/img/logo.jpg"
                     alt="DL Moderne bag collection"
                     fill
                     className="object-cover"
