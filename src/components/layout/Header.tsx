@@ -14,9 +14,9 @@ export function Header() {
 
   const navLinks = [
     { label: t.nav.home, href: "/" },
-    { label: t.nav.collection, href: "/#collection" },
-    { label: t.nav.contact, href: "/#contact" },
-    { label: t.nav.materials, href: "/#materials" },
+    { label: t.nav.collection, href: "/collection" },
+    // { label: t.nav.contact, href: "/#contact" },
+    // { label: t.nav.materials, href: "/#materials" },
     { label: t.nav.aboutme, href: "/about" },
   ];
 

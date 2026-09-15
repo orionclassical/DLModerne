@@ -8,10 +8,10 @@ export function Footer() {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { label: t.nav.home, href: "#hero" },
-    { label: t.nav.collection, href: "#collection" },
-    { label: t.nav.materials, href: "#materials" },
-    { label: t.nav.contact, href: "#contact" },
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.collection, href: "/collection" },
+    { label: t.nav.materials, href: "/#materials" },
+    { label: t.nav.contact, href: "/#contact" },
   ];
 
   return (

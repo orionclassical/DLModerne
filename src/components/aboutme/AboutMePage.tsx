@@ -80,7 +80,7 @@ export function AboutMePage() {
 
         <div className="grid gap-6">
           {storyHighlights.map(({description_1, description_2, description_3 }) => (
-            <article
+            <div
             //   key={title}
               className="rounded-[1.5rem] mx-55"
             >
@@ -101,7 +101,7 @@ export function AboutMePage() {
                 <br />
                 {description_3}
               </p>
-            </article>
+            </div>
           ))}
         </div>
       </section>
@@ -114,17 +114,17 @@ export function AboutMePage() {
           </h2>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/"
-              className="inline-flex items-center justify-center bg-white px-6 py-3 font-button text-xs tracking-[0.18em] text-title transition-opacity hover:opacity-90"
+              href="/collection"
+              className="inline-flex items-center bg-button justify-center border border-white/30 px-6 py-3 font-button text-xs tracking-[0.18em] transition-colors"
             >
               EXPLORE COLLECTION
             </Link>
-            <a
+            {/* <a
               href="#top"
               className="inline-flex items-center bg-button justify-center border border-white/30 px-6 py-3 font-button text-xs tracking-[0.18em] transition-colors"
             >
               BACK TO TOP
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

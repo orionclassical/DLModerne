@@ -1,12 +1,4 @@
-"use client";
-
-import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ProductCard } from "./ProductCard";
-import { ProductModal } from "./ProductModal";
-import { useLanguage } from "@/context/LanguageContext";
-
-type Product = {
+export type Product = {
   name: string;
   code: string;
   size: string;
@@ -16,7 +8,7 @@ type Product = {
   imagePath: string;
 };
 
-const products: Product[] = [
+export const products: Product[] = [
   { name: "BRM01", code: "BRM01", size: "Medium, L10 x H8", material: "Sabutan", color: "Black", price: "140€", imagePath: "/img/collection/BRM01.png" },
   { name: "BRA01", code: "BRA01", size: "Small, L10 x H9", material: "Sabutan", color: "Stripe Black/White", price: "130€", imagePath: "/img/collection/BRA01.png" },
   { name: "BRM02", code: "BRM02", size: "L5 x H4.5", material: "Sabutan", color: "Black", price: "130€", imagePath: "/img/collection/BRM02.png" },
@@ -41,79 +33,10 @@ const products: Product[] = [
   { name: "MSb001-B", code: "MSb001", size: "9x8", material: "Pandan", color: "Black with White Woven Accents", price: "70€", imagePath: "/img/collection/Msb001-B.png" },
 ];
 
-export function ShopByStyle() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const { t } = useLanguage();
+export const productMaterials = Array.from(
+  new Set(products.map((product) => product.material))
+);
 
-  const scroll = (direction: "left" | "right") => {
-    scrollRef.current?.scrollBy({
-      left: direction === "left" ? -240 : 240,
-      behavior: "smooth",
-    });
-  };
-
-  const handleNext = () => {
-    setSelectedIndex((prev) =>
-      prev === null ? null : (prev + 1) % products.length
-    );
-  };
-
-  const handlePrevious = () => {
-    setSelectedIndex((prev) =>
-      prev === null ? null : (prev - 1 + products.length) % products.length
-    );
-  };
-
-  return (
-    <section id="collection" className="scroll-mt-22 bg-light py-20">
-      <div className="mx-auto max-w-6xl px-6 text-center mb-12">
-        <h2 className="font-display font-bold text-2xl sm:text-3xl text-title mb-4">
-          {t.shop.heading}
-        </h2>
-        <p className="font-body text-sm text-paragraph max-w-xl mx-auto leading-relaxed">
-          {t.shop.description}
-        </p>
-      </div>
-
-      {/* <div className="relative mx-auto max-w-6xl px-6">
-        <button
-          onClick={() => scroll("left")}
-          aria-label="Scroll left"
-          className="hidden xl:flex cursor-pointer absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
-        >
-          <ChevronLeft className="w-4 h-4 text-title" />
-        </button>
-
-        <div
-          ref={scrollRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth px-6 md:px-12 py-2 [scrollbar-width:none]"
-        >
-          {products.map((product, index) => (
-            <ProductCard
-              key={product.name}
-              {...product}
-              viewLabel={t.shop.view}
-              onView={() => setSelectedIndex(index)}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={() => scroll("right")}
-          aria-label="Scroll right"
-          className="hidden xl:flex cursor-pointer absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-15 h-15 rounded-full bg-light-background border border-title items-center justify-center shadow-sm hover:bg-brown-background transition-colors"
-        >
-          <ChevronRight className="w-4 h-4 text-title" />
-        </button>
-      </div> */}
-
-      <ProductModal
-        product={selectedIndex !== null ? products[selectedIndex] : null}
-        onClose={() => setSelectedIndex(null)}
-        onNext={handleNext}
-        onPrevious={handlePrevious}
-      />
-    </section>
-  );
-}
+export const productColors = Array.from(
+  new Set(products.map((product) => product.color))
+);
