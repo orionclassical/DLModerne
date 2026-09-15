@@ -76,7 +76,7 @@ export function ShopByStyle() {
         </p>
       </div>
 
-      {/* <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-6">
         <button
           onClick={() => scroll("left")}
           aria-label="Scroll left"
@@ -94,7 +94,6 @@ export function ShopByStyle() {
               key={product.name}
               {...product}
               viewLabel={t.shop.view}
-              onView={() => setSelectedIndex(index)}
             />
           ))}
         </div>
@@ -106,7 +105,7 @@ export function ShopByStyle() {
         >
           <ChevronRight className="w-4 h-4 text-title" />
         </button>
-      </div> */}
+      </div>
 
       <ProductModal
         product={selectedIndex !== null ? products[selectedIndex] : null}
