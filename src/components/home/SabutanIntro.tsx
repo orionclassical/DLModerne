@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 export function SabutanIntro() {
   const { t } = useLanguage();
@@ -18,9 +19,13 @@ export function SabutanIntro() {
           <p className="font-body text-sm text-paragraph max-w-sm leading-relaxed mb-8">
             {t.sabutanIntro.description}
           </p>
+          <Link
+              href={`/collection/${encodeURIComponent("BRM03")}`}
+              className="">
           <button className="font-button text-xs cursor-pointer bg-button text-button-text px-6 py-3 rounded-sm w-fit hover:opacity-90 transition-opacity">
             {t.sabutanIntro.cta}
           </button>
+          </Link>
         </div>
 
         <div className="relative h-72 sm:h-96 md:h-full bg-peach/40">

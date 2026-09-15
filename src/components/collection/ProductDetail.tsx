@@ -83,14 +83,14 @@ export function ProductDetail({ code }: ProductDetailProps) {
       </div>
 
       <div className="overflow-hidden rounded-[2rem] border border-title/10 bg-light shadow-[0_24px_60px_rgba(18,38,28,0.06)]">
-        <div className="grid gap-6 bg-brown/40 p-4 sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
-          <div className="rounded-[1.5rem] bg-[#f4f4f4] p-3 sm:p-5">
-            <div className="relative h-[360px] w-full overflow-hidden rounded-[1.25rem] bg-[#f7f7f7] sm:h-[420px] lg:h-[520px]">
+        <div className="grid gap-6 bg-light p-4 sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
+          <div className="rounded-[1.5rem] bg-brown p-3 sm:p-5">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-[1.25rem] bg-light sm:h-[420px] lg:h-[520px]">
               <Image
                 src={selectedVariant.imagePath}
                 alt={selectedVariant.name}
                 fill
-                className="object-contain p-6"
+                className="object-contain p-6 border border-black/20 rounded-[1.2rem]"
               />
             </div>
 
@@ -106,12 +106,12 @@ export function ProductDetail({ code }: ProductDetailProps) {
                       : "border-title/15 bg-white/70 hover:border-title/50"
                   }`}
                 >
-                  <div className="relative h-20 w-full bg-brown">
+                  <div className="relative h-20 w-full bg-light cursor-pointer">
                     <Image
                       src={variant.imagePath}
                       alt={variant.name}
                       fill
-                      className="object-contain p-2"
+                      className="object-contain p-2 br"
                     />
                   </div>
                 </button>
@@ -121,11 +121,11 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
           <div className="flex flex-col justify-center rounded-[1.5rem] bg-light p-4 sm:p-5">
             <div className="mb-4 border-b border-title/10 pb-4">
-              <p className="font-button text-[10px] tracking-[0.25em] uppercase text-title/65">
+              {/* <p className="font-button text-[10px] tracking-[0.25em] uppercase text-title/65">
                 {selectedVariant.code}
-              </p>
-              <h1 className="mt-2 font-display text-4xl font-bold text-title leading-none sm:text-5xl">
-                {selectedVariant.name}
+              </p> */}
+              <h1 className="pb-4 font-display text-4xl font-bold text-title leading-none sm:text-5xl">
+                {selectedVariant.code}
               </h1>
             </div>
 
@@ -183,8 +183,8 @@ export function ProductDetail({ code }: ProductDetailProps) {
                     onClick={() => setSelectedVariantName(variant.name)}
                     className={`rounded-full border px-3 py-2 text-xs transition-all ${
                       selectedVariant.name === variant.name
-                        ? "border-title bg-title text-white"
-                        : "border-title/15 bg-brown/40 text-title hover:border-title/50"
+                        ? "border-title bg-title text-white cursor-pointer"
+                        : "border-title/15 bg-light text-title hover:border-title/50 cursor-pointer"
                     }`}
                   >
                     {variant.color}
@@ -241,7 +241,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
           onClick={() => setIsContactOpen(false)}
         >
           <div
-            className="relative w-full max-w-xl rounded-[1.5rem] border border-black/10 bg-[#f3f3f3] p-4 shadow-2xl sm:p-5"
+            className="relative w-full max-w-xl rounded-[1.5rem] border border-black/10 bg-light p-4 shadow-2xl sm:p-5"
             onClick={(event) => event.stopPropagation()}
           >
             <button

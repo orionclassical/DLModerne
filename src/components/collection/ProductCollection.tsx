@@ -140,11 +140,14 @@ export function ProductCollection() {
                 const variantCount = products.filter((item) => item.code === product.code).length;
 
                 return (
+                  <Link
+                          href={`/collection/${encodeURIComponent(product.code)}`}
+                          className="">
                   <article
                     key={product.code}
                     className="group overflow-hidden rounded-[1.5rem] border border-title/10 bg-light shadow-[0_16px_32px_rgba(18,38,28,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(18,38,28,0.12)]"
                   >
-                    <div className="relative h-32 overflow-hidden bg-brown sm:h-44 lg:h-60">
+                    <div className="relative h-32 overflow-hidden bg-light sm:h-44 lg:h-60">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <Image
                         src={product.imagePath}
@@ -154,14 +157,14 @@ export function ProductCollection() {
                       />
                     </div>
 
-                    <div className="space-y-3 p-3 sm:p-4">
+                    <div className="space-y-3 p-3 sm:p-4 border-t-1 border-button/10">
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
+                          {/* <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
                             {product.code}
-                          </p>
+                          </p> */}
                           <h2 className="mt-1 font-display text-xl font-bold text-title sm:text-2xl">
-                            {product.name}
+                            {product.code}
                           </h2>
                         </div>
                         <p className="font-display text-lg font-bold text-title sm:text-xl">
@@ -191,15 +194,16 @@ export function ProductCollection() {
                       </div>
 
                       <div className="pt-1">
-                        <Link
+                        {/* <Link
                           href={`/collection/${encodeURIComponent(product.code)}`}
-                          className="inline-flex items-center justify-center rounded-sm bg-button px-4 py-2.5 font-button text-[10px] tracking-[0.18em] uppercase text-button-text transition-opacity hover:opacity-90 sm:px-5 sm:py-3"
+                          className="flex justify-center rounded-sm bg-button px-4 py-2.5 font-button text-[10px] tracking-[0.18em] uppercase text-button-text transition-opacity hover:opacity-90 sm:px-5 sm:py-3"
                         >
                           View details
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </article>
+                  </Link>
                 );
               })}
             </div>
