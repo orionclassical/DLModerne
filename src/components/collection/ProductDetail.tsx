@@ -5,12 +5,18 @@ import Link from "next/link";
 import { ArrowLeft, Mail, Phone, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { products } from "@/lib/products";
+import { useLanguage } from "@/context/LanguageContext";
 
 type ProductDetailProps = {
   code: string;
 };
 
 export function ProductDetail({ code }: ProductDetailProps) {
+  const { t } = useLanguage();
+  const materialLabel = (value: string) =>
+    t.collection.materials[value as keyof typeof t.collection.materials] ?? value;
+  const colorLabel = (value: string) =>
+    t.collection.colors[value as keyof typeof t.collection.colors] ?? value;
   const variants = useMemo(
     () => products.filter((product) => product.code === code),
     [code]
@@ -45,11 +51,11 @@ export function ProductDetail({ code }: ProductDetailProps) {
     }
 
     const subject = encodeURIComponent(
-      `Inquiry about the bag (${selectedVariant.code})`
+      `${t.productDetail.contactUs} (${selectedVariant.code})`
     );
 
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nProduct: ${selectedVariant.name} (${selectedVariant.code})\nColor: ${selectedVariant.color}\nMaterial: ${selectedVariant.material}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\n${t.productDetail.email}: ${formData.email}\n\n${t.collection.heading}: ${selectedVariant.name} (${selectedVariant.code})\n${t.productDetail.color}: ${colorLabel(selectedVariant.color)}\n${t.productDetail.material}: ${materialLabel(selectedVariant.material)}\n\n${t.productDetail.messageForMe}:\n${formData.message}`
     );
 
     window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
@@ -74,17 +80,17 @@ export function ProductDetail({ code }: ProductDetailProps) {
           className="inline-flex items-center gap-2 rounded-full border border-title/15 bg-light px-3 py-2 font-button text-[10px] tracking-[0.18em] uppercase text-title transition-colors hover:bg-brown"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to collection
+          {t.productDetail.backToCollection}
         </Link>
 
         <p className="font-button text-[10px] tracking-[0.2em] uppercase text-title/70">
-          {variants.length} styles available
+          {variants.length} {t.productDetail.stylesAvailable}
         </p>
       </div>
 
       <div className="overflow-hidden rounded-[2rem] border border-title/10 bg-light shadow-[0_24px_60px_rgba(18,38,28,0.06)]">
         <div className="grid gap-6 bg-light p-4 sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
-          <div className="rounded-[1.5rem] bg-brown p-3 sm:p-5">
+          <div className="rounded-[1.5rem] bg-light p-3 sm:p-5">
             <div className="relative h-[360px] w-full overflow-hidden rounded-[1.25rem] bg-light sm:h-[420px] lg:h-[520px]">
               <Image
                 src={selectedVariant.imagePath}
@@ -132,7 +138,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
             <div className="flex items-center justify-between gap-3 pb-4">
               <div>
                 <p className="font-button text-[10px] tracking-[0.18em] uppercase text-title/65">
-                  Price
+                  {t.productDetail.price}
                 </p>
                 <div className="mt-1 flex items-center gap-3">
                   <span className="font-display text-3xl font-bold text-title">
@@ -152,27 +158,27 @@ export function ProductDetail({ code }: ProductDetailProps) {
             <div className="space-y-3 border-b border-title/10 pb-5 font-body text-base text-paragraph">
               <p>
                 <span className="font-button text-[10px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                  Material
+                  {t.productDetail.material}
                 </span>
-                {selectedVariant.material}
+                {materialLabel(selectedVariant.material)}
               </p>
               <p>
                 <span className="font-button text-[10px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                  Size
+                  {t.productDetail.size}
                 </span>
                 {selectedVariant.size}
               </p>
               <p>
                 <span className="font-button text-[10px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                  Color
+                  {t.productDetail.color}
                 </span>
-                {selectedVariant.color}
+                {colorLabel(selectedVariant.color)}
               </p>
             </div>
 
             <div className="mt-5">
               <p className="mb-3 font-button text-[10px] tracking-[0.2em] uppercase text-title/70">
-                Available styles
+                {t.productDetail.availableStyles}
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -187,7 +193,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
                         : "border-title/15 bg-light text-title hover:border-title/50 cursor-pointer"
                     }`}
                   >
-                    {variant.color}
+                    {colorLabel(variant.color)}
                   </button>
                 ))}
               </div>
@@ -195,7 +201,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
             <div className="mt-6 rounded-[1.25rem] bg-[#0d1e18] p-4 text-white">
               <p className="font-button text-[10px] tracking-[0.24em] uppercase text-white/70">
-                Contact us
+                {t.productDetail.contactUs}
               </p>
               <div className="mt-3 space-y-3">
                 <a
@@ -218,7 +224,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
                 onClick={() => setIsContactOpen(true)}
                 className="mt-4 inline-flex w-full items-center cursor-pointer justify-center rounded-sm bg-white px-4 py-3 font-button text-[10px] tracking-[0.2em] uppercase text-title transition-opacity hover:opacity-90"
               >
-                Secure your bag now
+                {t.productDetail.secureBag}
               </button>
             </div>
           </div>
@@ -229,7 +235,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
         <div className="fixed inset-x-0 top-5 z-[60] flex justify-center px-4">
           <div className="animate-[fadeIn_0.2s_ease-out,fadeOut_0.8s_ease-in_1s_forwards] rounded-full border border-green-200 bg-green-100 px-5 py-3 shadow-lg">
             <p className="font-button text-xs tracking-[0.18em] uppercase text-green-800">
-              Message sent
+              {t.productDetail.messageSent}
             </p>
           </div>
         </div>
@@ -247,7 +253,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
             <button
               type="button"
               onClick={() => setIsContactOpen(false)}
-              aria-label="Close contact form"
+              aria-label={t.productDetail.closeForm}
               className="cursor-pointer absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-title/15 bg-light text-title transition-colors hover:bg-brown"
             >
               <X className="h-4 w-4" />
@@ -255,7 +261,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
             <div className="mb-4 pt-2">
               <p className="font-display text-3xl font-bold leading-none text-title sm:text-4xl">
-                Write me.
+                {t.productDetail.writeMe}
               </p>
             </div>
 
@@ -274,7 +280,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
               <div>
                 <label className="mb-2 block font-body text-base text-title sm:text-lg">
-                  E-mail <span className="text-[#d66969]">*</span>
+                  {t.productDetail.email} <span className="text-[#d66969]">*</span>
                 </label>
                 <input
                   type="email"
@@ -286,7 +292,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
               <div>
                 <label className="mb-2 block font-body text-base text-title sm:text-lg">
-                  Your message for me <span className="text-[#d66969]">*</span>
+                  {t.productDetail.messageForMe} <span className="text-[#d66969]">*</span>
                 </label>
                 <textarea
                   value={formData.message}
@@ -303,7 +309,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
                 onClick={handleSendEmail}
                 className="w-full rounded-[0.9rem] bg-[#171717] cursor-pointer px-4 py-3 font-button text-l uppercase tracking-[0.08em] text-white transition-opacity hover:opacity-90 sm:py-4 sm:text-l"
               >
-                send
+                {t.productDetail.send}
               </button>
             </div>
           </div>
