@@ -21,7 +21,7 @@ export function Header() {
   ];
 
   const languages = [
-    { code: "en" as const, label: "English" },
+    { code: "en" as const, label: "Englisch" },
     { code: "de" as const, label: "Deutsch" },
   ];
 
@@ -43,13 +43,13 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-button text-xs tracking-wider text-paragraph hover:text-title transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -111,14 +111,14 @@ export function Header() {
       >
         <nav className="flex flex-col items-center gap-1 px-4 pb-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
               className="w-full text-center py-3 font-button text-xs tracking-wider text-paragraph hover:text-title hover:bg-brown-background rounded-sm transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

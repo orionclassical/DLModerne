@@ -1,6 +1,7 @@
 // src/components/home/Hero.tsx
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
@@ -20,12 +21,12 @@ export function Hero() {
           <p className="font-body text-sm xs:text-base text-paragraph w-full max-w-md mx-auto md:mx-0 mb-6 xs:mb-8 leading-relaxed">
             {t.hero.description}
           </p>
-          <a
+          <Link
             href="/collection"
             className="inline-block font-button text-xs xs:text-sm bg-button font-medium text-button-text cursor-pointer px-5 xs:px-6 py-2.5 xs:py-3 rounded-sm hover:opacity-90 transition-opacity"
           >
             {t.hero.cta}
-          </a>
+          </Link>
         </div>
 
         {/* Right: hero image container responsive sizing */}

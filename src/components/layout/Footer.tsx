@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { MessageCircle, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -10,8 +11,7 @@ export function Footer() {
   const quickLinks = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.collection, href: "/collection" },
-    { label: t.nav.materials, href: "/#materials" },
-    { label: t.nav.contact, href: "/#contact" },
+    { label: t.nav.aboutme, href: "/about" },
   ];
 
   return (
@@ -42,13 +42,13 @@ export function Footer() {
             {t.footer.quickLinks}
           </p>
           {quickLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-body text-sm text-center lg:text-left text-button-text/80 hover:text-button-text transition-colors w-fill"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 

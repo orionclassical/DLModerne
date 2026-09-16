@@ -5,8 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { products, productColors, productMaterials, type Product } from "@/lib/products";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ProductCollection() {
+  const { t } = useLanguage();
+  const materialLabel = (value: string) =>
+    t.collection.materials[value as keyof typeof t.collection.materials] ?? value;
+  const colorLabel = (value: string) =>
+    t.collection.colors[value as keyof typeof t.collection.colors] ?? value;
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMaterial, setSelectedMaterial] = useState("All");
   const [selectedColor, setSelectedColor] = useState("All");
@@ -61,15 +67,15 @@ export function ProductCollection() {
       <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-button text-xs tracking-[0.3em] text-title/70 uppercase mb-2">
-            Collection
+            {t.collection.label}
           </p>
           <h1 className="font-display text-4xl sm:text-5xl text-title font-bold leading-none">
-            Discover our full range
+            {t.collection.heading}
           </h1>
         </div>
 
         <p className="font-button text-[10px] tracking-[0.2em] text-title/70 uppercase">
-          {filteredProducts.length} items
+          {filteredProducts.length} {t.collection.itemCount}
         </p>
       </div>
 
@@ -82,7 +88,7 @@ export function ProductCollection() {
                 type="text"
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
-                placeholder="Search products, material, color..."
+                placeholder={t.collection.searchPlaceholder}
                 className="w-full bg-transparent border-none outline-none font-body text-sm text-paragraph placeholder:text-paragraph/50"
               />
             </div>
@@ -92,7 +98,7 @@ export function ProductCollection() {
                 <div className="flex items-center gap-2">
                   <SlidersHorizontal className="h-4 w-4 text-title" />
                   <p className="font-button text-xs tracking-[0.2em] uppercase text-title">
-                    Filters
+                    {t.collection.filters}
                   </p>
                 </div>
 
@@ -102,30 +108,35 @@ export function ProductCollection() {
                     className="inline-flex items-center gap-2 rounded-full border border-title/20 px-2.5 py-1 font-button text-[9px] tracking-[0.15em] uppercase text-title transition-colors hover:bg-light"
                   >
                     <X className="h-3 w-3" />
-                    Clear
+                    {t.collection.clear}
                   </button>
                 )}
               </div>
 
               <div className="space-y-5">
                 <FilterSelect
-                  label="Material"
+                  label={t.collection.material}
                   value={selectedMaterial}
                   options={["All", ...productMaterials]}
+                  allLabel={t.collection.all}
+                  optionLabel={materialLabel}
                   onChange={setSelectedMaterial}
                 />
 
                 <FilterSelect
-                  label="Color"
+                  label={t.collection.color}
                   value={selectedColor}
                   options={["All", ...productColors]}
+                  allLabel={t.collection.all}
+                  optionLabel={colorLabel}
                   onChange={setSelectedColor}
                 />
 
                 <FilterSelect
-                  label="Size"
+                  label={t.collection.size}
                   value={selectedSize}
                   options={sizeOptions}
+                  allLabel={t.collection.all}
                   onChange={setSelectedSize}
                 />
               </div>
@@ -175,19 +186,19 @@ export function ProductCollection() {
                       <div className="space-y-1.5 font-body text-xs text-paragraph sm:text-sm">
                         <p>
                           <span className="font-button text-[9px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                            Material
+                            {t.collection.material}
                           </span>
-                          {product.material}
+                          {materialLabel(product.material)}
                         </p>
                         <p>
                           <span className="font-button text-[9px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                            Color
+                            {t.collection.color}
                           </span>
-                          {product.color}
+                          {colorLabel(product.color)}
                         </p>
                         <p>
                           <span className="font-button text-[9px] tracking-[0.18em] uppercase text-title/70 mr-2">
-                            Styles
+                            {t.collection.variants}
                           </span>
                           {variantCount}
                         </p>
@@ -209,9 +220,9 @@ export function ProductCollection() {
             </div>
           ) : (
             <div className="rounded-[2rem] border border-dashed border-title/20 bg-brown/40 px-6 py-16 text-center">
-              <p className="font-display text-3xl text-title font-bold mb-2">No matches found</p>
+              <p className="font-display text-3xl text-title font-bold mb-2">{t.collection.noMatches}</p>
               <p className="font-body text-base text-paragraph/70">
-                Try adjusting your search or clearing one of the filters.
+                {t.collection.noMatchesDescription}
               </p>
             </div>
           )}
@@ -225,11 +236,15 @@ function FilterSelect({
   label,
   value,
   options,
+  allLabel,
+  optionLabel,
   onChange,
 }: {
   label: string;
   value: string;
   options: string[];
+  allLabel: string;
+  optionLabel?: (value: string) => string;
   onChange: (value: string) => void;
 }) {
   return (
@@ -244,7 +259,7 @@ function FilterSelect({
       >
         {options.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {option === "All" ? allLabel : optionLabel?.(option) ?? option}
           </option>
         ))}
       </select>

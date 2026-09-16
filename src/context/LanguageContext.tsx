@@ -13,16 +13,17 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en");
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("dlmoderne-lang") as Language | null;
     if (stored === "en" || stored === "de") {
       setLanguageState(stored);
-      return;
+    } else {
+      const browserLang = navigator.language.toLowerCase();
+      setLanguageState(browserLang.startsWith("de") ? "de" : "en");
     }
-
-    const browserLang = navigator.language.toLowerCase();
-    setLanguageState(browserLang.startsWith("de") ? "de" : "en");
+    setIsReady(true);
   }, []);
 
   const setLanguage = (lang: Language) => {
@@ -32,7 +33,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
-      {children}
+      <div style={{ visibility: isReady ? "visible" : "hidden" }}>{children}</div>
     </LanguageContext.Provider>
   );
 }
