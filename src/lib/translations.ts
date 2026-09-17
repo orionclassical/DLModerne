@@ -42,6 +42,7 @@ export const translations = {
         "Pandan Leaves": "Pandan Leaves",
         "Handwoven Pandan": "Handwoven Pandan",
         "Pandan": "Pandan",
+        "Pandan leaves with wood handle": "Pandan leaves with wood handle",
       },
       colors: {
         "Black": "Black",
@@ -57,6 +58,8 @@ export const translations = {
         "Dark Brown / Black Stripes": "Dark Brown / Black Stripes",
         "Black/White Woven Accents": "Black/White Woven Accents",
         "Black with White Woven Accents": "Black with White Woven Accents",
+        "Brown woven accents": "Brown woven accents",
+        "Multicolor and off white woven accents": "Multicolor and off white woven accents",
       },
     },
     productDetail: {
@@ -177,6 +180,7 @@ export const translations = {
         "Pandan Leaves": "Pandanblätter",
         "Handwoven Pandan": "Handgewebtes Pandan",
         "Pandan": "Pandan",
+        "Pandan leaves with wood handle": "Pandanblätter mit Holzgriff",
       },
       colors: {
         "Black": "Schwarz",
@@ -192,6 +196,8 @@ export const translations = {
         "Dark Brown / Black Stripes": "Dunkelbraune und schwarze Streifen",
         "Black/White Woven Accents": "Schwarz-weiße Webdetails",
         "Black with White Woven Accents": "Schwarz mit weißen Webdetails",
+        "Brown woven accents": "Braune Webdetails",
+        "Multicolor and off white woven accents": "Mehrfarbige und cremeweiße Webdetails",
       },
     },
     productDetail: {

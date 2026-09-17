@@ -22,7 +22,7 @@ export function Hero() {
             {t.hero.description}
           </p>
           <Link
-            href="/collection.html"
+            href="/collection"
             className="inline-block font-button text-xs xs:text-sm bg-button font-medium text-button-text cursor-pointer px-5 xs:px-6 py-2.5 xs:py-3 rounded-sm hover:opacity-90 transition-opacity"
           >
             {t.hero.cta}

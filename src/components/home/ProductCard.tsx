@@ -16,7 +16,7 @@ export function ProductCard({ name, code, imagePath, viewLabel }: ProductCardPro
       </div>
       <div>
         <Link
-          href={`/collection/${encodeURIComponent(code)}.html`}
+          href={`/collection/${encodeURIComponent(code)}`}
           className="inline-block font-button text-xs bg-button cursor-pointer text-button-text px-5 py-2 rounded-sm self-start hover:opacity-90 transition-opacity"
         >
           {viewLabel}

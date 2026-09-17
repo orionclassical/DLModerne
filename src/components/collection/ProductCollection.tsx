@@ -242,13 +242,13 @@ export function ProductCollection() {
                 return (
                   <Link
                     key={product.code}
-                    href={`/collection/${encodeURIComponent(product.code)}.html`}
+                    href={`/collection/${encodeURIComponent(product.code)}`}
                     className=""
                   >
                   <article
                     className="group overflow-hidden rounded-[1.5rem] border border-title/10 bg-light shadow-[0_16px_32px_rgba(18,38,28,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(18,38,28,0.12)]"
                   >
-                    <div className="relative h-32 overflow-hidden bg-light sm:h-44 lg:h-60">
+                    <div className="relative h-48 overflow-hidden bg-light sm:h-44 lg:h-60">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <Image
                         src={product.imagePath}
@@ -258,17 +258,17 @@ export function ProductCollection() {
                       />
                     </div>
 
-                    <div className="space-y-3 p-3 sm:p-4 border-t-1 border-button/10">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
+                    <div className="space-y-2 p-3 sm:space-y-3 sm:p-4 border-t-1 border-button/10">
+                      <div className="flex min-w-0 items-start justify-between gap-2 sm:gap-3">
+                        <div className="min-w-0">
                           {/* <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
                             {product.code}
                           </p> */}
-                          <h2 className="mt-1 font-display text-xl font-bold text-title sm:text-2xl">
+                          <h2 className="mt-1 truncate font-display text-base font-bold text-title sm:text-2xl">
                             {product.code}
                           </h2>
                         </div>
-                        <p className="font-display text-lg font-bold text-title sm:text-xl">
+                        <p className="shrink-0 font-display text-base font-bold text-title sm:text-xl">
                           {product.price}
                         </p>
                       </div>
@@ -296,7 +296,7 @@ export function ProductCollection() {
 
                       <div className="pt-1">
                         {/* <Link
-                          href={`/collection/${encodeURIComponent(product.code)}.html`}
+                          href={`/collection/${encodeURIComponent(product.code)}`}
                           className="flex justify-center rounded-sm bg-button px-4 py-2.5 font-button text-[10px] tracking-[0.18em] uppercase text-button-text transition-opacity hover:opacity-90 sm:px-5 sm:py-3"
                         >
                           View details

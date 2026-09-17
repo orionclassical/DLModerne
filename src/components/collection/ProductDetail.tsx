@@ -76,7 +76,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
     <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
       <div className="mb-6 flex items-center justify-between gap-3">
         <Link
-          href="/collection.html"
+          href="/collection"
           className="inline-flex items-center gap-2 rounded-full border border-title/15 bg-light px-3 py-2 font-button text-[10px] tracking-[0.18em] uppercase text-title transition-colors hover:bg-brown"
         >
           <ArrowLeft className="h-3.5 w-3.5" />

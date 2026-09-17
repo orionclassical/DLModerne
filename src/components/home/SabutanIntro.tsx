@@ -20,7 +20,7 @@ export function SabutanIntro() {
             {t.sabutanIntro.description}
           </p>
           <Link
-              href={`/collection/${encodeURIComponent("BRM03")}.html`}
+              href={`/collection/${encodeURIComponent("BRM03")}`}
               className="">
           <button className="font-button text-xs cursor-pointer bg-button text-button-text px-6 py-3 rounded-sm w-fit hover:opacity-90 transition-opacity">
             {t.sabutanIntro.cta}
