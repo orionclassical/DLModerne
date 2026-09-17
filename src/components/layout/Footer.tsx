@@ -10,8 +10,8 @@ export function Footer() {
 
   const quickLinks = [
     { label: t.nav.home, href: "/" },
-    { label: t.nav.collection, href: "/collection" },
-    { label: t.nav.aboutme, href: "/about" },
+    { label: t.nav.collection, href: "/collection.html" },
+    { label: t.nav.aboutme, href: "/about.html" },
   ];
 
   return (
