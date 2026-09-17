@@ -22,6 +22,7 @@ export const products: Product[] = [
   { name: "BAS01-B", code: "BAS01", size: "8.5x10", material: "Sabutan", color: "Black with Orange", price: "120€", imagePath: "/img/collection/BAS01-B.png" },
   { name: "BAP01", code: "BAP01", size: "10.5x12", material: "Pandan Leaves with Wood Handle", color: "Cream/Off-white Woven Accents", price: "120€", imagePath: "/img/collection/BAP01.png" },
   { name: "BAP02", code: "BAP02", size: "11x13.5", material: "Pandan Leaves", color: "Navy Blue", price: "120€", imagePath: "/img/collection/BAP02.png" },
+  { name: "BAP03", code: "BAP03", size: "15x10", material: "Pandan leaves with wood handle", color: "Pink", price: "120€", imagePath: "/img/collection/BAP03.png" },
   { name: "BAPS04", code: "BAPS04", size: "8.5x8.5", material: "Pandan Leaves", color: "Cream/Off-white Woven Accents", price: "120€", imagePath: "/img/collection/BAPS04.png" },
   { name: "BAPHP01", code: "BAPHP01", size: "11x15", material: "Handwoven Pandan", color: "Cream/Off-white Woven Accents", price: "120€", imagePath: "/img/collection/BAPHP01.png" },
   { name: "BAPT01", code: "BAPT01", size: "12x8", material: "Pandan Leaves", color: "Cream/Off-white Woven Accents", price: "120€", imagePath: "/img/collection/BAPT01.png" },
@@ -29,6 +30,9 @@ export const products: Product[] = [
   { name: "BZ002-A", code: "BZ002", size: "9x14", material: "Buntal Fiber", color: "Dark Brown / Black Stripes", price: "140€", imagePath: "/img/collection/BZ002-A.png" },
   { name: "BZ002-B", code: "BZ002", size: "9x14", material: "Sabutan", color: "Cream/Off-white Woven Accents", price: "140€", imagePath: "/img/collection/BZ002-B.png" },
   { name: "FP001", code: "FP001", size: "5.5x12", material: "Pandan", color: "Black/White Woven Accents", price: "110€", imagePath: "/img/collection/FP001.png" },
+  { name: "VB002", code: "VB002", size: "9x16", material: "Pandan", color: "Brown woven accents", price: "120€", imagePath: "/img/collection/VB002.png" },
+  { name: "Handwoven clutch-A", code: "Handwoven-Clutch", size: "4x8", material: "Pandan", color: "Multicolor", price: "35€", imagePath: "/img/collection/HandwovenClutch-A.png" },
+  { name: "Handwoven clutch-B", code: "Handwoven-Clutch", size: "4x8", material: "Pandan", color: "Off white woven accents", price: "35€", imagePath: "/img/collection/HandwovenClutch-B.png" },
   { name: "MSb001-A", code: "MSb001", size: "9x8", material: "Pandan", color: "Black with White Woven Accents", price: "70€", imagePath: "/img/collection/Msb001-A.png" },
   { name: "MSb001-B", code: "MSb001", size: "9x8", material: "Pandan", color: "Black with White Woven Accents", price: "70€", imagePath: "/img/collection/Msb001-B.png" },
 ];

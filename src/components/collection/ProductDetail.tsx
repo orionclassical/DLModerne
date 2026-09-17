@@ -22,7 +22,7 @@ export function ProductDetail({ code }: ProductDetailProps) {
     [code]
   );
 
-  const recipientEmail = "orionclassical@gmail.com";
+  const recipientEmail = "dl-moderne-bayong@gmx.de";
 
   const [selectedVariantName, setSelectedVariantName] = useState<string>(
     variants[0]?.name ?? ""

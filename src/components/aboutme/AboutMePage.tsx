@@ -13,7 +13,7 @@ export function AboutMePage() {
       <section className="relative overflow-hidden bg-gradient-to-r from-[#F1FFE8] from-35% to-[#AAD3AB] to-100%">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-16 md:py-20">
           <div className="grid items-center gap-8 md:gap-10 md:grid-cols-[1.05fr_0.95fr]">
-            <div className="relative z-10">
+            <div className="relative z-10 text-center md:text-left">
               <h1 className="font-display text-3xl leading-tight text-title sm:text-5xl sm:leading-[0.95] md:text-6xl">
                 {t.about.titleLine1}
                 <span className="mt-2 block text-[#3E7A4C]">{t.about.titleLine2}</span>
@@ -35,7 +35,7 @@ export function AboutMePage() {
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center">
+            <div className="relative order-first flex items-center justify-center md:order-none">
               <div className="absolute inset-x-8 bottom-4 h-16 rounded-full bg-[#1E3A27]/10 blur-2xl" />
               <div className="relative w-full max-w-xl overflow-hidden rounded-[50rem] border border-title/10 bg-white/60 p-2 shadow-[0_25px_60px_rgba(30,58,39,0.12)] backdrop-blur-sm sm:p-3">
                 <div className="relative h-[280px] overflow-hidden rounded-[50rem] sm:h-[360px] md:h-[455px]">
