@@ -10,13 +10,13 @@ type ProductCardProps = {
 
 export function ProductCard({ name, code, imagePath, viewLabel }: ProductCardProps) {
   return (
-    <div className="flex-shrink-0 w-56 bg-light border border-black/20 rounded-xl p-4 flex flex-col items-center">
+    <div className="shrink-0 w-56 bg-light border border-black/20 rounded-xl p-4 flex flex-col items-center">
       <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
         <Image src={imagePath} alt={name} fill className="object-cover" />
       </div>
       <div>
         <Link
-          href={`/collection/${encodeURIComponent(code)}`}
+          href={`/collection/${encodeURIComponent(code)}.html`}
           className="inline-block font-button text-xs bg-button cursor-pointer text-button-text px-5 py-2 rounded-sm self-start hover:opacity-90 transition-opacity"
         >
           {viewLabel}

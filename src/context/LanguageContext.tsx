@@ -12,7 +12,7 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  const [language, setLanguageState] = useState<Language>("de");
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -20,8 +20,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (stored === "en" || stored === "de") {
       setLanguageState(stored);
     } else {
-      const browserLang = navigator.language.toLowerCase();
-      setLanguageState(browserLang.startsWith("de") ? "de" : "en");
+      setLanguageState("de");
     }
     setIsReady(true);
   }, []);

@@ -84,7 +84,7 @@ export function AboutMePage() {
           </h2>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row sm:gap-4">
             <Link
-              href="/collection"
+              href="/collection.html"
               className="inline-flex w-full items-center justify-center border border-white/30 bg-button px-4 py-3 text-center font-button text-[10px] tracking-[0.12em] transition-colors sm:w-auto sm:px-6 sm:text-xs sm:tracking-[0.18em]"
             >
               {t.about.exploreCollection}

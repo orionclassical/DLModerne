@@ -31,7 +31,20 @@ export function ProductCollection() {
     return Array.from(unique.values());
   }, []);
 
-  const sizeOptions = ["All", ...Array.from(new Set(products.map((product) => product.size)))];
+  const sizeOptions = useMemo(
+    () => ["All", ...Array.from(new Set(products.map((product) => product.size)))],
+    [],
+  );
+
+  const variantCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+
+    products.forEach((product) => {
+      counts.set(product.code, (counts.get(product.code) ?? 0) + 1);
+    });
+
+    return counts;
+  }, []);
 
   const filteredProducts = useMemo(() => {
     const normalizedSearch = searchTerm.trim().toLowerCase();
@@ -82,7 +95,7 @@ export function ProductCollection() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
-        <aside className="lg:sticky lg:top-[88px]">
+        <aside className="lg:sticky lg:top-22">
           <div className="rounded-[1.75rem] border border-title/10 bg-light p-4 shadow-[0_20px_45px_rgba(18,38,28,0.06)] sm:p-5">
             <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 lg:block">
               <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-title/15 bg-brown/60 px-3 py-3">
@@ -155,7 +168,7 @@ export function ProductCollection() {
                 </div>
 
                 <div
-                  className={`fixed inset-0 z-[60] transition-opacity duration-300 lg:hidden ${
+                  className={`fixed inset-0 z-60 transition-opacity duration-300 lg:hidden ${
                     isFilterOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                   }`}
                   aria-hidden={!isFilterOpen}
@@ -237,28 +250,31 @@ export function ProductCollection() {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
               {filteredProducts.map((product) => {
-                const variantCount = products.filter((item) => item.code === product.code).length;
+                const variantCount = variantCounts.get(product.code) ?? 1;
 
                 return (
                   <Link
                     key={product.code}
-                    href={`/collection/${encodeURIComponent(product.code)}`}
+                    href={`/collection/${encodeURIComponent(product.code)}.html`}
                     className=""
                   >
                   <article
-                    className="group overflow-hidden rounded-[1.5rem] border border-title/10 bg-light shadow-[0_16px_32px_rgba(18,38,28,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(18,38,28,0.12)]"
+                    className="group overflow-hidden rounded-3xl border border-title/10 bg-light shadow-[0_16px_32px_rgba(18,38,28,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(18,38,28,0.12)]"
                   >
                     <div className="relative h-48 overflow-hidden bg-light sm:h-44 lg:h-60">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <Image
                         src={product.imagePath}
                         alt={product.name}
                         fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={80}
+                        loading="lazy"
                         className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03] sm:p-5"
                       />
                     </div>
 
-                    <div className="space-y-2 p-3 sm:space-y-3 sm:p-4 border-t-1 border-button/10">
+                    <div className="space-y-2 p-3 sm:space-y-3 sm:p-4 border-t border-button/10">
                       <div className="flex min-w-0 items-start justify-between gap-2 sm:gap-3">
                         <div className="min-w-0">
                           {/* <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
@@ -296,7 +312,7 @@ export function ProductCollection() {
 
                       <div className="pt-1">
                         {/* <Link
-                          href={`/collection/${encodeURIComponent(product.code)}`}
+                          href={`/collection/${encodeURIComponent(product.code)}.html`}
                           className="flex justify-center rounded-sm bg-button px-4 py-2.5 font-button text-[10px] tracking-[0.18em] uppercase text-button-text transition-opacity hover:opacity-90 sm:px-5 sm:py-3"
                         >
                           View details
@@ -309,7 +325,7 @@ export function ProductCollection() {
               })}
             </div>
           ) : (
-            <div className="rounded-[2rem] border border-dashed border-title/20 bg-brown/40 px-6 py-16 text-center">
+            <div className="rounded-4xl border border-dashed border-title/20 bg-brown/40 px-6 py-16 text-center">
               <p className="font-display text-3xl text-title font-bold mb-2">{t.collection.noMatches}</p>
               <p className="font-body text-base text-paragraph/70">
                 {t.collection.noMatchesDescription}
