@@ -127,12 +127,17 @@ export function ProductDetail({ code }: ProductDetailProps) {
 
           <div className="flex flex-col justify-center rounded-[1.5rem] bg-light p-4 sm:p-5">
             <div className="mb-4 border-b border-title/10 pb-4">
-              {/* <p className="font-button text-[10px] tracking-[0.25em] uppercase text-title/65">
+              <p className="font-button text-[10px] tracking-[0.25em] uppercase text-title/65">
                 {selectedVariant.code}
-              </p> */}
+              </p>
               <h1 className="pb-4 font-display text-4xl font-bold text-title leading-none sm:text-5xl">
-                {selectedVariant.code}
+                {selectedVariant.name}
               </h1>
+              {selectedVariant.description && (
+                <p className="max-w-xl font-body text-base leading-relaxed text-paragraph/80">
+                  {selectedVariant.description}
+                </p>
+              )}
             </div>
 
             <div className="flex items-center justify-between gap-3 pb-4">

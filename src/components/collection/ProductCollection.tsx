@@ -277,11 +277,11 @@ export function ProductCollection() {
                     <div className="space-y-2 p-3 sm:space-y-3 sm:p-4 border-t border-button/10">
                       <div className="flex min-w-0 items-start justify-between gap-2 sm:gap-3">
                         <div className="min-w-0">
-                          {/* <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
+                          <p className="font-button text-[9px] tracking-[0.18em] uppercase text-title/60">
                             {product.code}
-                          </p> */}
+                          </p>
                           <h2 className="mt-1 truncate font-display text-base font-bold text-title sm:text-2xl">
-                            {product.code}
+                            {product.name}
                           </h2>
                         </div>
                         <p className="shrink-0 font-display text-base font-bold text-title sm:text-xl">
