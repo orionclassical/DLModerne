@@ -5,6 +5,7 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { getProductDescription, products as catalogProducts } from "@/lib/products";
 
 type Product = {
   name: string;
@@ -14,6 +15,8 @@ type Product = {
   color: string;
   price: string;
   imagePath: string;
+  description?: string;
+  descriptionDe?: string;
 };
 
 type ProductModalProps = {
@@ -25,7 +28,7 @@ type ProductModalProps = {
 
 export function ProductModal({ product, onClose, onNext, onPrevious }: ProductModalProps) {
   const [isVisible, setIsVisible] = useState(true);
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     if (!product) return;
@@ -45,6 +48,11 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
   }, [onClose, onNext, onPrevious]);
 
   if (!product) return null;
+
+  const catalogProduct = catalogProducts.find(
+    (catalogItem) => catalogItem.name === product.name
+  );
+  const description = getProductDescription(catalogProduct ?? product, language);
 
   return (
     <div
@@ -88,6 +96,12 @@ export function ProductModal({ product, onClose, onNext, onPrevious }: ProductMo
           <h3 className="font-display font-bold text-xl md:text-2xl text-title mb-4">
             {product.name}
           </h3>
+
+          {description && (
+            <p className="font-body text-sm leading-relaxed text-paragraph/80 mb-5">
+              {description}
+            </p>
+          )}
 
           <div className="flex flex-col gap-2 mb-6">
             <p className="font-body text-sm text-paragraph">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Mail, Phone, X } from "lucide-react";
 import { useMemo, useState } from "react";
-import { products } from "@/lib/products";
+import { getProductDescription, products } from "@/lib/products";
 import { useLanguage } from "@/context/LanguageContext";
 
 type ProductDetailProps = {
@@ -12,7 +12,7 @@ type ProductDetailProps = {
 };
 
 export function ProductDetail({ code }: ProductDetailProps) {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const materialLabel = (value: string) =>
     t.collection.materials[value as keyof typeof t.collection.materials] ?? value;
   const colorLabel = (value: string) =>
@@ -133,9 +133,9 @@ export function ProductDetail({ code }: ProductDetailProps) {
               <h1 className="pb-4 font-display text-4xl font-bold text-title leading-none sm:text-5xl">
                 {selectedVariant.name}
               </h1>
-              {selectedVariant.description && (
+              {getProductDescription(selectedVariant, language) && (
                 <p className="max-w-xl font-body text-base leading-relaxed text-paragraph/80">
-                  {selectedVariant.description}
+                  {getProductDescription(selectedVariant, language)}
                 </p>
               )}
             </div>
